@@ -39,7 +39,7 @@
 
 	<administration>
 		<!-- Administration Menu Section -->
-		<menu>Hello World!</menu>
+		<menu>My Vote!</menu>
 		
 		<!-- Administration Main File Copy Section -->
 		<!-- Note the folder attribute: This attribute describes the folder
