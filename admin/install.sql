@@ -2,11 +2,12 @@ DROP TABLE IF EXISTS `#__vote`;
 
 CREATE TABLE `#__vote` (
   `id` int unsigned not null auto_increment,
+  `checked` int unsigned not null,
   `title` varchar(255) not null,
   primary key(`id`)
 ) ENGINE=MyISAM auto_increment=0 default CHARSET=utf8;
 
-insert into `#__vote` (`id`,`title`) values (1,'Who is the best player in the world?');
+insert into `#__vote` (`id`,`checked`,`title`) values (1,1,'Who is the best player in the world?');
 
 
 DROP TABLE IF EXISTS `#__vote_item`;

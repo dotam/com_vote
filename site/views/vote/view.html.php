@@ -11,9 +11,18 @@ class VoteViewVote extends JView
 {
  function display($tpl = null)
 	{
-		$result = $this->get( 'Select_item' ); //ko hieu, mình nghĩ là funstion từ lớp view "getSelect_item"
-		$this->assignRef( 'result',	$result );
-
+		// get data from model
+		$model = &$this->getModel();
+		
+		$vote = $model->getVote();
+		
+		$voteItem = $model->getVoteItem($vote->id);
+		
+		//push data to template................
+		$this->assignRef('vote',$vote);
+		$this->assignRef('voteItem',$voteItem);
+		
+		//.................................
 		parent::display($tpl);
 	}
 }

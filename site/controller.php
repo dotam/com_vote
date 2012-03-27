@@ -3,6 +3,7 @@
 
  defined('_JEXEC') or die('Restricted access'); 
  
+ jimport('joomla.application.component.controller');
  
  class VoteController extends JController
 {
@@ -13,7 +14,7 @@
      */
     function display()
     {
-        
+        parent::display();
     }
  
 }
