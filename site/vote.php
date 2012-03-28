@@ -25,7 +25,4 @@ $controller->execute( JRequest::getWord( 'task' ) );
 // Redirect if set by the controller
 $controller->redirect();
 
-
-
-
- ?>
+?>

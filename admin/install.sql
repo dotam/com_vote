@@ -21,7 +21,7 @@ CREATE TABLE `#__vote_item`(
 	
 	)ENGINE=MyISAM auto_increment=0 default CHARSET=utf8;
 
-INSERT INTO `vote_item` (`id`, `voteid`, `text`, `hits`) VALUES
+INSERT INTO `#__vote_item` (`id`, `voteid`, `text`, `hits`) VALUES
 (1, 1, 'Messi', 7),
 (2, 1, 'Ronaldo', 5),
 (3, 1, 'Kaka', 4),
