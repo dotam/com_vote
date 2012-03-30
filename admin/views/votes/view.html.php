@@ -14,8 +14,11 @@ class VotesViewVotes extends JView
 		JToolBarHelper::editListX();
 		JToolBarHelper::addNewX();
 
-		
+		// Get data from the model
+		$items		= & $this->get( 'Data');
 
+		$this->assignRef('items',	$items);
+		//
 		parent::display($tpl);
 	}
 }
