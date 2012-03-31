@@ -15,7 +15,9 @@ class VotesViewVote extends JView
 	{
 		//get the vote
 		$vote		=& $this->get('Data');
-		//$item		=& $this->get('Item');
+/////////////////
+		$item		=& $this->get('Item');
+////////////////
 		$isNew		= ($vote->id < 1);
 
 		$text = $isNew ? JText::_( 'New' ) : JText::_( 'Edit' );
@@ -29,7 +31,9 @@ class VotesViewVote extends JView
 		}
 
 		$this->assignRef('vote', $vote);
-		//$this->assignRef('item', $item);
+///////////		
+		$this->assignRef('item', $item);
+//////////
 
 		parent::display($tpl);
 	}

@@ -56,7 +56,20 @@ class VotesModelVote extends JModel
 		}
 		return $this->_data;
 	}
-
+///////////////////////////////////////////////////////////////////
+	/**
+	 * Method to get a hello
+	 * @return object with data
+	 */
+	function &getItem()
+	{
+		$db = & JFactory::getDBO();
+		$query = 'SELECT text FROM #__vote_item WHERE voteid = '.$this->_id;
+		$db->setQuery($query);
+		$item = $db->loadObjectList();
+		return $item;
+	}
+////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Method to store a record

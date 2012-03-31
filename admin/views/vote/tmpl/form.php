@@ -28,19 +28,25 @@ value="<?php echo $this->vote->title;?>" />
 	<fieldset class="adminform">
 	<legend><?php echo JText::_( 'Options' ); ?></legend>
 	<table class="admintable">
+
 			<tbody>
-				
+				<?php 	
+				$k = 1;
+				foreach ($this->item as $row) {
+				echo '
 				<tr>
 					<td class="key">
 						<label for="title">
-							<?php echo JText::_( 'Title' ); ?>:
+							Option'. $k . '
 						</label>
 					</td>
 					<td>
-						<input class="inputbox" type="text" name="" id="" value="Community Sites" size="60">
+						<input class="inputbox" type="text" name="" id="" value="'. $row->text . '" size="60">
 					</td>
-				</tr>			
-
+				</tr>';
+				
+				$k = $k + 1;		
+				}?>
 			</tbody>
 	</table>
 	</fieldset>
