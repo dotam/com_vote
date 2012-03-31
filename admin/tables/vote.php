@@ -5,7 +5,7 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 /**
- * Hello Table class
+ * Vote Table class
  *
  * @package    Joomla.Tutorials
  * @subpackage Components

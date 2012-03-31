@@ -57,6 +57,7 @@ class VotesModelVote extends JModel
 		return $this->_data;
 	}
 
+
 	/**
 	 * Method to store a record
 	 *

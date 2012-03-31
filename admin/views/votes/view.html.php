@@ -15,7 +15,7 @@ class VotesViewVotes extends JView
 		JToolBarHelper::addNewX();
 
 		// Get data from the model
-		$items		= & $this->get( 'Data');
+		$items	= & $this->get( 'Data');
 
 		$this->assignRef('items',	$items);
 		//
