@@ -59,6 +59,8 @@
 			<filename>models/index.html</filename>
 			<filename>tables/vote.php</filename>
 			<filename>tables/index.html</filename>
+			<filename>items/vote.php</filename>
+			<filename>items/index.html</filename>
 			<filename>views/vote/view.html.php</filename>
 			<filename>views/vote/tmpl/form.php</filename>
 			<filename>views/vote/index.html</filename>

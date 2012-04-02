@@ -20,7 +20,7 @@ CREATE TABLE `#__vote_item`(
 	`id` int unsigned not null auto_increment,
 	`voteid` int not null,
 	`text` text not null,
-	`hits` not null default '0',
+	`hits` int not null default '0',
 	primary key(`id`)
 	
 	)ENGINE=MyISAM auto_increment=0 default CHARSET=utf8;
