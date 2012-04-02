@@ -32,7 +32,8 @@ value="<?php echo $this->vote->title;?>" />
 			<tbody>
 				<?php 	
 				$k = 1;
-				foreach ($this->item as $row) {
+				for ($i=0, $n=count( $this->item ); $i < $n + 5; $i++) {
+				$row = $this->item[$i];
 				echo '
 				<tr>
 					<td class="key">
