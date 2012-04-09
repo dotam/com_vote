@@ -22,13 +22,8 @@ class VotesModelVote extends JModel
 		$this->setId((int)$array[0]);
 	}
 
-	/**
-	 * Method to set the hello identifier
-	 *
-	 * @access	public
-	 * @param	int Hello identifier
-	 * @return	void
-	 */
+	
+
 	function setId($id)
 	{
 		// Set id and wipe data
