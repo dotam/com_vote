@@ -10,9 +10,12 @@ class VotesViewVotes extends JView
 	function display($tpl = null)
 	{
 		JToolBarHelper::title(JText::_( 'Vote Manager' ));
-		JToolBarHelper::deleteList();
+
+		JToolBarHelper::apply();		
 		JToolBarHelper::editListX();
 		JToolBarHelper::addNewX();
+		JToolBarHelper::deleteList();
+		
 
 		// Get data from the model
 		$items	= & $this->get( 'Data');
