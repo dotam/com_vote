@@ -24,6 +24,8 @@
 		<filename>views/vote/tmpl/index.html</filename>
 		<filename>views/vote/tmpl/default.php</filename>
 		<filename>views/index.html</filename>
+		<filename>controllers/vote.php</filename>
+		<filename>views/vote/tmpl/graph.php</filename>
 	</files>
 
 	<install>
