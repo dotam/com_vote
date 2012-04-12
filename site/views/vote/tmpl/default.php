@@ -1,6 +1,31 @@
-<form  method="post" action="index.php">
-<table border=0 width=150 bgcolor="EEEEEE" cellspacing=2 cellpadding=0>
-	<tr><td colspan=2><font face="Verdana" size=-1 color="000000"><b> <?php echo $this->vote->title;?> </b></font>
+<html>
+<head>
+<style tyle="text/css">
+#voteform{
+    border:5px solid green;
+    background-color: #E0E0E0;
+    width: 500px;
+    
+    
+}
+td{
+    font-size: 18px;
+    font-weight: lighter;
+    
+}
+h2{
+    color: #990000;
+}
+</style>
+</head>
+<body>
+
+
+<div id="voteform">
+
+<form  method="post" action="index.php" >
+<table border=0  bgcolor="" cellspacing=2 cellpadding=0>
+	<tr><td colspan=2 ><font face="Verdana" size='' color="000000"><h2> <?php echo $this->vote->title;?> </h2></font>
 		</td>
 	</tr>
 	<?php 
@@ -9,8 +34,10 @@
 	?>
 			<tr>
 				<td width=5><input type='radio' name='item' value='<?php echo $row->id ?>' /></td>
-				<td><font face="Verdana" size=-1 color="000000"><label ><?php echo
-				$row->text ?></label></font></td>
+				<td ><font face="Verdana" size="" color="green"><label ><?php echo
+				$row->text ?></label></font>
+                    
+                </td>
 			</tr>
 	<?php
 	;}
@@ -32,3 +59,6 @@
 	<input type="hidden" name="task" value="updateVote" />
 	  
 </form>
+</div>
+</body>
+</html>
