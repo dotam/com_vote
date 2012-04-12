@@ -17,10 +17,14 @@ class VoteViewVote extends JView
 		$vote = $model->getVote();
 		
 		$voteItem = $model->getVoteItem($vote->id);
+        
+        $listPercent = $model->calculateVote($voteItem);
+        
 		
 		//push data to template................
 		$this->assignRef('vote',$vote);
 		$this->assignRef('voteItem',$voteItem);
+        $this->assignRef('listPercent',$listPercent);
 		
 		//.................................
 		parent::display($tpl);
