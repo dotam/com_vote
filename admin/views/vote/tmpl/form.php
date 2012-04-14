@@ -15,7 +15,7 @@
 			</td>
 			<td>
 				<input class="text_area" type="text" name="title" id="title" size="32" maxlength="250" 
-value="<?php echo $this->vote->title;?>" />
+                value="<?php echo $this->vote->title;?>" />
 			</td>
 		</tr>
 	</table>
@@ -31,23 +31,34 @@ value="<?php echo $this->vote->title;?>" />
 
 			<tbody>
 				<?php 	
-				$k = 1;
+				
 				for ($i=0, $n=count( $this->item ); $i < $n; $i++) {
 				$row = $this->item[$i];
-				echo '
-				<tr>
-					<td class="key">
-						<label for="title">
-							Option'. $k . '
-						</label>
-					</td>
-					<td>
-						<input class="inputbox" type="text" name="" id="" value="'. $row->text . '" size="60">
-					</td>
-				</tr>';
-				
-				$k = $k + 1;		
-				}?>
+				?>
+					<tr>
+						<td class="key">
+							<label for="voteoption<?php echo $row->id; ?>">
+								<?php echo JText::_( 'Option' ); ?> <?php echo ($i+1); ?>
+							</label>
+						</td>
+						<td>
+							<input class="inputbox" type="text" name="voteoption[<?php echo $row->id ?>]" id="voteoption<?php echo $row->id ?>" value="<?php echo $row->text; ?>" size="60" />
+						</td>
+					</tr>
+
+			<?php } for (; $i < 10; $i++) { ?>
+	           	<tr>
+		              	<td class="key">
+				            <label for="voteoption<?php echo $i + 1; ?>">
+					       <?php echo JText::_( 'Option' ); ?> <?php echo $i + 1; ?>
+			             	</label>
+			         </td>
+			          <td>
+			     	<input class="inputbox" type="text" name="voteoption[]" id="voteoption<?php echo $i + 1; ?>" value="" size="60" />
+			         </td>
+		      </tr>
+            <?php } ?>
+
 			</tbody>
 	</table>
 	</fieldset>

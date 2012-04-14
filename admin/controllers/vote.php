@@ -4,11 +4,7 @@
 // No direct access
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-/**
- *
- * @package    Joomla.Tutorials
- * @subpackage Components
- */
+
 class VotesControllerVote extends VotesController
 {
 	/**
@@ -43,14 +39,15 @@ class VotesControllerVote extends VotesController
 	function save()
 	{
 		$model = $this->getModel('vote');
-
-		if ($model->store($post)) {
+        
+        
+       
+		if ($model->store()) {
 			$msg = JText::_( 'Title Saved!' );
 		} else {
-			$msg = JText::_( 'Error Saving Greeting' );
+			$msg = JText::_( 'Error Saving Vote' );
 		}
-
-		// Check the table in so it can be edited.... we are done with it anyway
+       
 		$link = 'index.php?option=com_vote';
 		$this->setRedirect($link, $msg);
 	}
@@ -63,7 +60,7 @@ class VotesControllerVote extends VotesController
 	{
 		$model = $this->getModel('vote');
 		if(!$model->delete()) {
-			$msg = JText::_( 'Error: One or More Greetings Could not be Deleted' );
+			$msg = JText::_( 'Error: One or More Vote Could not be Deleted' );
 		} else {
 			$msg = JText::_( 'Title(s) Deleted' );
 		}

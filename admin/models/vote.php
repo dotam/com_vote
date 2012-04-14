@@ -53,17 +53,18 @@ class VotesModelVote extends JModel
 	}
 ///////////////////////////////////////////////////////////////////
 	/**
-	 * Method to get a hello
+	 * Method to get a vote
 	 * @return object with data
 	 */
 	function &getItem()
 	{
 		$db = & JFactory::getDBO();
-		$query = 'SELECT text FROM #__vote_item WHERE voteid = '.$this->_id;
+		$query = 'SELECT id,text FROM #__vote_item WHERE voteid = '.$this->_id;
 		$db->setQuery($query);
 		$item = $db->loadObjectList();
 		return $item;
 	}
+    
 ////////////////////////////////////////////////////////////////////
 
 	/**
@@ -72,17 +73,18 @@ class VotesModelVote extends JModel
 	 * @access	public
 	 * @return	boolean	True on success
 	 */
-	function store()
+	function store( )
 	{	
 		$row =& $this->getTable();
-
+        $db = & JFactory::getDBO();
 		$data = JRequest::get( 'post' );
 
-		// Bind the form fields to the hello table
+		// Bind the form fields to the vote table
 		if (!$row->bind($data)) {
 			$this->setError($this->_db->getErrorMsg());
 			return false;
 		}
+        $isNew = ($row->id == 0);
 
 		// Make sure the hello record is valid
 		if (!$row->check()) {
@@ -95,6 +97,39 @@ class VotesModelVote extends JModel
 			$this->setError( $row->getErrorMsg() );
 			return false;
 		}
+        $row->checkin();
+        
+
+        $options=& JRequest::getVar( 'voteoption', array(), 'post', 'array' );
+
+		foreach ($options as $i=>$text)
+		{
+			
+            $text = htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+			if ($isNew)
+			{
+			    
+				$obj = new stdClass();
+				$obj->voteid = (int)$row->id;
+				$obj->text   = $text;
+				$db->insertObject('#__vote_item', $obj);
+			}
+			else
+			{    
+			 
+             
+				$obj = new stdClass();
+				$obj->id     = (int)$i;
+                $obj->voteid = $row->id;
+				$obj->text   = $text;
+				$db->updateObject('#__vote_item', $obj, 'id');
+			}
+            
+		
+		}
+
+        
+        
 
 		return true;
 	}
