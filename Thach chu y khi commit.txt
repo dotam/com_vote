@@ -1,1 +1,0 @@
-Thach nen ghi chu ro rang khi commit khong duoc dung chu "hi" de commit
